@@ -1,0 +1,118 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[dutch]{babel}
+%\usepackage{bera}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\title{Case Dockbite}
+\date{\today}
+\author{Dani\"el Kappelle\\ \href{mailto:daniel.kappelle@dockbite.nl}{daniel.kappelle@dockbite.nl}}
+
+\setlength{\parindent}{0pt}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+\begin{document}
+\maketitle
+
+\section{Doel van de case}
+Het doel van deze case is te kijken of gewenste competenties aanwezig zijn. Het is dan ook niet erg als kennis van bepaalde zaken ontbreekt, maar juist belangrijk hoe deze nodige kennis dan wordt aangevuld en wordt opgezocht.\\
+
+Voor deze case is het de bedoeling om een back-end te maken voor een heel simpel blogsysteem. Een beschrijving van het systeem en een aantal eisen staan in de volgende paragraaf. Het systeem kan op allerlei verschillende manieren ge\"implenteerd worden. Het is dus juist belangrijk dat de keuzes onderbouwd kunnen worden.\\
+
+Het back-end dient als webserver te draaien op Node.js, eventueel door gebruik te maken van bestaande frameworks of packages. Een front-end hoeft niet ge\"implementeerd te worden (een simpele mag natuurlijk wel), maar er kan gebruik gemaakt worden van een tool als {\it Postman}\footnote{Kan hier gedownload worden https://www.getpostman.com/downloads/}. Een paar voorbeeld api endpoints staan ook in de volgende paragraaf. De data (artikelen en reacties) dient opgeslagen te worden door middel van bijvoorbeeld (waarschijnlijk) een database.
+
+\section{Case: mini blogsysteem}
+Het blogsysteem bestaat uit artikelen en reacties. Een artikel bevat een titel, een tekst en een categorie. Verder moet het mogelijk zijn het artikel te `liken'. Het aantal likes moet bijgehouden worden. Er moeten ook reacties geplaatst kunnen worden bij een artikel. Deze reacties bestaan ten minste uit een naam en de reactie.\\
+
+
+\subsection{Eisen}
+\subsubsection{Artikel}
+Het moet mogelijk zijn ...
+\begin{itemize}
+\item een artikel aan te maken
+\item een artikel op te vragen (inclusief aantal likes en reacties)
+\item een artikel te updaten
+\item een lijst van alle artikelen te krijgen
+\item alle artikelen binnen een bepaalde categorie op te vragen
+\item een artikel te `liken'
+\item een reactie te plaatsen voor een specifiek artikel
+\end{itemize}
+
+\subsubsection{Reactie}
+Het moet mogelijk zijn ...
+\begin{itemize}
+\item alle reacties op te vragen voor een specifiek artikel
+\item een reactie te plaatsen bij een specifiek artikel
+\item een reactie te verwijderen
+\end{itemize}
+
+\subsubsection{API endpoints}
+De API endpoints dienen volgens het REST principe te werken \cite{rest}, een paar voorbeelden:
+
+\paragraph{Artikel met id 1234 ophalen}
+\lstinline{GET /artikel/1234}
+\paragraph{Artikel plaatsen}
+\lstinline{POST /artikel}\\
+In de body van de post een JSON object in de vorm:\\
+\begin{lstlisting}[language=json]
+{
+	"title": "Titel van het artikel",
+	"body": "de tekst",
+	...
+}
+\end{lstlisting}
+
+De precieze invulling van de endpoints, zoals url's en attribuutnamen mogen zelf ingevuld worden.
+
+
+\subsubsection{Overig}
+Het systeem dient lokaal als webserver te draaien op Node.js \cite{node}. Het moet dus mogelijk zijn calls te maken (d.m.v. bijvoorbeeld Postman) naar \url{http://localhost:3000} of \url{http://127.0.0.1:3000} (niet per se poort 3000, dat is slechts een voorbeeld).\\
+
+De artikelen en reacties moeten opgeslagen worden, dus er moet iets van een database ge\"implenteerd worden om de data op te slaan. De keuze hierin is vrij.
+
+\begin{thebibliography}{9}
+\bibitem{rest}
+Representational state transfer,
+\url{https://en.wikipedia.org/wiki/Representational_state_transfer#Architectural_constraints}
+\bibitem{node}
+Node.js,
+\url{https://nodejs.org/en/}
+
+\end{thebibliography}
+
+\end{document}
