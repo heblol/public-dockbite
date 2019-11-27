@@ -27,7 +27,7 @@ Als er inhoudelijk fouten zitten in het project of deze handleiding, dan kun je 
 ## Git
 Net als elk softwareproject, is ook dit project opgezet als een git repository. Heel kort uitgelegd is git een versiebeheersysteem wat ervoor zorgt dat meerdere mensen simultaan aan een project kunnen werken en oude versies behouden worden. Dit zorgt er enerzijds voor dat als je iets stuk hebt gemaakt, je gemakkelijk een versie terug kan naar waar het nog werkte om het probleem op te sporen. Anderzijds zorgt het ervoor dat als verschillende mensen hetzelfde bestand bewerken, er alleen conflicten optreden als de daadwerkelijk dezelfde regels hebben aangepast. Anders gaat het gewoon goed. De geschiedenis wordt ook met auteurs bewaard en dus kun je terugzien wie bepaalde stukken code geschreven heeft (met de toepasselijke benaming git blame).
 
-Het is aan te raden om je wat in te lezen in git, want je zult het nodig hebben. Het is ook voor eventuele eigen projecten die om code draaien erg aan te raden. De termen die je in ieder geval moet begrijpen zijn: commits, branches, pushen, pullen, pull-requests en conflicts.
+Het is aan te raden om je wat in te lezen in git, want je zult het nodig hebben. Het is ook voor eventuele eigen projecten die om code draaien erg aan te raden. De termen die je in ieder geval moet begrijpen zijn: commits, branches, pushen, pullen, pull-requests, clonen en forken.
 
 Wat linkjes: https://rogerdudler.github.io/git-guide/, https://hackernoon.com/understanding-git-fcffd87c15a3. Er zijn nog ontzettend veel tutorials te vinden op internet.
 
