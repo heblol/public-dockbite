@@ -173,6 +173,7 @@ Aan de front-end moeten natuurlijk ook dingen gebeuren:
 ## 6 Verdere ideeen
 Als je verder nog wil spelen en oefenen met dit projectje zijn hier nog wat ideeen die je zou kunnen uitproberen:
 
+* Als datasource wordt nu memory gebruikt, oftewel na een server restart is alle data weg. Probeer dat te vervangen door een database als MongoDB of MySQL
 * Styling toevoegen voor de front-end, bijvoorbeeld door gebruik te maken van [Boostrap](https://getbootstrap.com/)
 * Voorkomen dat iemand meerdere keren hetzelfde artikel kan liken
 * De front-end uitbreiden met meerdere pagina's en routing
