@@ -26,9 +26,32 @@ export class AppComponent implements OnInit {
    * for populating variables with data from a back-end for example.
    */
   public ngOnInit() {
+
+    /**
+     * The `find()` method retrieves all instances of the model. It returns an
+     * observable, which is a particular kind of object that you will see a lot in
+     * Typescript. You can 'subscribe' to it using its `subscribe()` method with a
+     * callback.
+     *
+     * Go ahead and google what Observables are and how they work (roughly, just the
+     * basic usage should be enough)
+     */
     this.articleApi.find()
       .subscribe((articles: Article[]) => {
         this.articles = articles;
       });
+  }
+
+  /**
+   * This function adds one like to the corresponding
+   * article.
+   * @param id Id of the article to like
+   */
+  public like(id: number|string): void {
+    /**
+     * This function needs to be implemented. Make sure your remote method (on the back-end)
+     * works. Also, remember that `this.articleApi` has all kinds of wrapper functions to
+     * work with the back-end model.
+     */
   }
 }

@@ -1,9 +1,20 @@
 <h1>Dockbite Case Blog system</h1>
 <h2>Blog articles</h2>
 
+<!-- Show this div for each of the articles -->
 <div *ngFor="let article of articles">
   <hr>
   <h4>{{article.title}}</h4>
   <p>{{article.body}}</p>
+  <!-- The number of likes needs to be populated.
+        Make sure there is a likes property on the
+        back-end model first.
+
+        Also, the button should trigger the function `like` which
+        is in `app.component.ts`. Find out how to bind a function
+        to a button click in Angular -->
   <i>... Likes - <button>Like</button></i>
 </div>
+
+
+<!-- Can you create a form here to create a new article? -->
