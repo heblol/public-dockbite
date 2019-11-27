@@ -83,9 +83,10 @@ Je kan ook een nieuw artikel toevoegen d.m.v. de `POST` endpoint `/Articles`.
 ### Front-end starten
 Als de back-end werkt is het tijd om de front-end te starten. **Zorg dat je de back-end laat draaien, anders kan de front-end geen data ophalen!**
 
-Vanuit de `client` map kan met hetvolgende commando de front-end worden gestart:
+Alvorens je de front-end kan starten, moet je de benodigde packages installeren met behulp van npm. Vanuit de `client` map kunnen met de volgende commando's de packages geïnstalleerd worden en de front-end worden gestart:
 
 ```
+$ npm install
 $ ng serve
 ```
 
