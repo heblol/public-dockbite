@@ -1,0 +1,14 @@
+{
+  "name": "Article",
+  "plural": "Articles",
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
