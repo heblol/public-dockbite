@@ -1,0 +1,9 @@
+<h1>Dockbite Case Blog system</h1>
+<h2>Blog articles</h2>
+
+<div *ngFor="let article of articles">
+  <hr>
+  <h4>{{article.title}}</h4>
+  <p>{{article.body}}</p>
+  <i>... Likes - <button>Like</button></i>
+</div>
