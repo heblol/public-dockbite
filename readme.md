@@ -93,7 +93,7 @@ Na het compilen zal je als alles goed gaat uiteindelijk de regel `** Angular Liv
 
 Als het goed is krijg je daar een lijstje te zien met de artikelen die je ook via de API Explorer zag.
 
-Zo ja, dan is project helemaal gestart en kan er functionaliteit worden toegevoegd!
+Zo ja, dan is het project helemaal gestart en kan er functionaliteit worden toegevoegd!
 
 ## 1 Back-end like
 Het artikel-model moet functionaliteit krijgen om ge-'liked' te worden. Het model wordt gedefinieerd in `server/models/article.json`. In `server/models/article.js` wordt verder functionaliteit toegevoegd. Voor meer informatie: https://loopback.io/doc/en/lb3/Defining-models.html.
