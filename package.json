@@ -7,8 +7,9 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "node .",
-    "posttest": "npm run lint"
+    "start": "npm install && npm run build:sdk && NODE_ENV=development DEBUG=app:* nodemon --inspect",
+    "posttest": "npm run lint",
+    "build:sdk": "./node_modules/.bin/lb-sdk -w 'enabled' server/server.js client/src/app/sdk"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -23,7 +24,8 @@
   "devDependencies": {
     "@mean-expert/loopback-sdk-builder": "^2.3.1",
     "eslint": "^3.17.1",
-    "eslint-config-loopback": "^8.0.0"
+    "eslint-config-loopback": "^8.0.0",
+    "nodemon": "^2.0.1"
   },
   "repository": {
     "type": "",
