@@ -1,11 +1,11 @@
 # Dockbite case
-Het doel van deze case is kijken of gewenste compenties aanwezig zijn. Het is dan ook niet erg als kennis van bepaalde zaken ontbreekt, maar juist belangrijk hoe deze nodige kennis dan wordt aangevuld en wordt opgezocht.
+Het doel van deze case is kijken of gewenste competenties aanwezig zijn. Het is dan ook niet erg als kennis van bepaalde zaken ontbreekt, maar juist belangrijk hoe deze nodige kennis dan wordt aangevuld en wordt opgezocht.
 
 Voor deze case is er al een basaal systeempje opgezet. Deze dient aangepast te worden om extra functionaliteit toe te voegen. Het betreft een heel simpel blogsysteem. Er zijn vooralsnog alleen artikelen met een titel en inhoud. Deze kunnen weergegeven worden, maar nog niet worden toegevoegd. De opdracht is om functionaliteiten als: liken van artikelen, toevoegen van artikelen en reacties toe te voegen. Hieronder wordt dat stapsgewijs uitgelegd.
 
-Het belangrijkst is om een beetje te wennen aan de gebruikte frameworks. Dit zal voornamelijk neerkomen op heel veel googlen, documentatie lezen, StackOverflow vragen doorlezen etc.
+Het belangrijkst is om een beetje te wennen aan de gebruikte frameworks. Dit zal voornamelijk neerkomen op heel veel googlen, documentatie lezen, StackOverflow-vragen doorlezen etc.
 
-Secties 1-6 bevatten opdrachten om te wennen aan de omgeving die we bij Dockbite veel gebruiken. Bij 1 en 2 wordt je redelijk bij de hand genomen, daarna worden de opdrachten snel ingewikkelder en wordt je veel minder geholpen.
+Secties 1-6 bevatten opdrachten om te wennen aan de omgeving die we bij Dockbite veel gebruiken. Bij 1 en 2 wordt je redelijk bij de hand genomen, daarna worden de opdrachten snel ingewikkelder en word je veel minder geholpen.
 
 ## Vragen/opmerkingen
 Zoals al eerder vermeld is goed zoeken en documentatie lezen altijd de eerste stap. Als je daarmee ergens niet uit komt, of je hebt moeite met het opzetten van de development omgeving op je PC is het het makkelijkst even iemand aan te spreken op kantoor om je erbij te helpen.
@@ -25,11 +25,11 @@ Als er inhoudelijk fouten zitten in het project of deze handleiding, dan kun je 
 
 ## Opzet
 ### Back-end
-Het project bestaat uit twee helften: een back-end en een front-end. De back-end bevat modellen (in dit geval alleen het `Article` model) en logica die op die modellen kunnen worden toegepast. De back-end is een zogenaamde REST API (https://restfulapi.net/) en bevat API end-points als `create`, `find`, `delete`, etc., voor de modellen.
+Het project bestaat uit twee helften: een back-end en een front-end. De back-end bevat modellen (in dit geval alleen het `Article` model) en logica die op die modellen kunnen worden toegepast. De back-end is een zogenaamde REST API (https://restfulapi.net/) en bevat API endpoints als `create`, `find`, `delete`, etc., voor de modellen.
 
-De API endpoints worden aangesproken door een HTTP request te doen naar de specifieke end-point. Als je lokaal een server draait op poort `3000` bijvoorbeeld: http://localhost:3000/api/Article. Het maakt hierbij ook nog uit welke HTTP method gebruikt wordt, de meest voorkomende zijn `GET`, `POST`, `PATCH` of `PUT` (https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
+De API endpoints worden aangesproken door een HTTP request te doen naar de specifieke endpoint. Als je lokaal een server draait op poort `3000` bijvoorbeeld: http://localhost:3000/api/Article. Het maakt hierbij ook nog uit welke HTTP method gebruikt wordt, de meest voorkomende zijn `GET`, `POST`, `PATCH`, `PUT` en `DELETE` (https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
 
-Deze kun je maken vanuit je browser of vanuit een programma'tje als [Postman](https://www.getpostman.com/). Voor dit projecte zal dat echter niet nodig zijn, er is een ingebouwde 'Api Explorer' die netjes alle endpoints laat zien en je de mogelijkheid geeft requests naar ze te doen. Daarover straks meer.
+Deze kun je maken vanuit je browser of vanuit een programma'tje als [Postman](https://www.getpostman.com/). Voor dit projectje zal dat echter niet nodig zijn, er is een ingebouwde 'Api Explorer' die netjes alle endpoints laat zien en je de mogelijkheid geeft er requests naar te doen. Daarover straks meer.
 
 Tot slot is de back-end verantwoordelijk voor het opslaan van data, dit gebeurt in de regel d.m.v. een database (zoals [MongoDB](https://www.mongodb.com/) of [MySQL](https://www.mysql.com/)). Voor test doeleinden kan het ook volstaan de data alleen tijdelijk vast te houden, dan blijft de data in het memory van de server en blijft het bestaan totdat de server gestopt wordt.
 
@@ -72,7 +72,7 @@ Browse your REST API at http://localhost:3000/explorer
 
 Je server draait nu en je kan in je browser naar http://localhost:3000 te gaan om hem in werking te zien, dan zie je als het goed is wanneer hij gestart is en hoe lang hij al online is.
 
-Je kan ook naar http://localhost:3000/explorer, dit is de Api Explorer die ik al eerder aanhaalde. Hier zie je het model `Article`, als je daar op klikt zie je alle end-points die daarbij horen.
+Je kan ook naar http://localhost:3000/explorer, dit is de Api Explorer die ik al eerder aanhaalde. Hier zie je het model `Article`, als je daar op klikt zie je alle endpoints die daarbij horen.
 
 Je kan hier proberen de artikelen te laden door de `GET` endpoint `/Articles` uit te voeren ('Try it out').
 > #0.1 Zie je de twee artikelen?
@@ -93,10 +93,10 @@ Na het compilen zal je als alles goed gaat uiteindelijk de regel `** Angular Liv
 
 Als het goed is krijg je daar een lijstje te zien met de artikelen die je ook via de API Explorer zag.
 
-Zo ja, dan het project helemaal gestart en kan er functionaliteit worden toegevoegd!
+Zo ja, dan is project helemaal gestart en kan er functionaliteit worden toegevoegd!
 
 ## 1 Back-end like
-Het artikel model moet functionaliteit krijgen om ge-'liked' te worden. Het model wordt gedefinieerd in `server/models/article.json`. In `server/models/article.js` wordt verder functionaliteit toegevoegd. Voor meer informatie: https://loopback.io/doc/en/lb3/Defining-models.html.
+Het artikel-model moet functionaliteit krijgen om ge-'liked' te worden. Het model wordt gedefinieerd in `server/models/article.json`. In `server/models/article.js` wordt verder functionaliteit toegevoegd. Voor meer informatie: https://loopback.io/doc/en/lb3/Defining-models.html.
 
 > #1.1 Welke velden voor het artikelmodel worden gedefinieerd? En welke methods (anders dan de standaard create, find, etc...) ?
 
@@ -110,7 +110,7 @@ De volgende stap is om de logica te implementeren om likes toe te voegen. In `se
 
 Handige links: https://loopback.io/doc/en/lb3/Remote-methods.html, https://loopback.io/doc/en/lb3/Creating-updating-and-deleting-data.html
 
-> #1.3 Voeg functionaliteit toe aan de `like` method, zodat de hoeveel likes van een artikel met 1 verhoogd wordt, de nieuwe hoeveelheid likes moet geretourneerd worden. Test of dit werkt d.m.v. van de api explorer.
+> #1.3 Voeg functionaliteit toe aan de `like` method, zodat de hoeveel likes van een artikel met 1 verhoogd wordt, de nieuwe hoeveelheid likes moet geretourneerd worden. Test of dit werkt d.m.v. van de Api Explorer.
 
 Als dat gelukt is, is de back-end voorlopig klaar.
 
@@ -119,17 +119,17 @@ Aan de front-end kant staan er nog geen aantal likes bij de artikelen. Die moete
 
 De HTML van de pagina staat in `client/src/app/app.component.html`, de bijbehorende TypeScript in `client/src/app/app.component.ts`. Kijk even door deze files heen en lees de comments.
 
-> #2.1 Vervang de ... door het daadwerkelijk aantal likes. Als je nu vanuit de api explorer een artikel liked en de pagina ververst, is de extra like dan verschenen?
+> #2.1 Vervang de '...' door het daadwerkelijk aantal likes. Als je nu vanuit de Api Explorer een artikel liked en de pagina ververst, is de extra like dan verschenen?
 
 De volgende stap is om een artikel te liken vanuit de front-end. De knop is er al, maar deze doet nu nog niets.
 
 > #2.2 Gebruik google en de Angular documentatie om een klik-event te binden aan de knop en zorg dat deze de betreffende functie in de TypeScript uitvoert.
 
->TIP: Je kan `console.log()` gebruiken om te testen wat er gebeurt. De logs verschijnen in je browser in de console, voor Chrome/Firefox open je deze met F12 en dan het tabje console.
+>TIP: Je kan `console.log()` gebruiken om te testen wat er gebeurt. De logs, de argumenten van `console.log`, verschijnen in je browser in de developer tools, voor Chrome/Firefox open je deze met F12 en dan het tabje console.
 
 Tot slot moet deze functie de `like` method op het artikel uitvoeren middels de betreffend API endpoint, gebruik hier de `ArticleApi` voor zoals beschreven in de file.
 
-> #2.3 Voer de `like`-method uit. Gebruik eventueel de console om de response te zien, is het gelukt? Je kan ook het network-tabje gebruiken in je browser om de request te zien.
+> #2.3 Voer de `like`-method uit. Gebruik eventueel de console om de response te zien, is het gelukt? Je kan ook het network-tabje van de developer tools gebruiken in je browser om de request te zien.
 
 Als het gelukt is zie je de nieuwe hoeveelheid likes als je de pagina ververst. Natuurlijk is het wel netjes als dat ook gebeurt zonder te verversen.
 
@@ -170,11 +170,11 @@ Aan de front-end moeten natuurlijk ook dingen gebeuren:
 
 > #5.4 Toon alle reacties bij alle artikelen.
 
-## 6 Verdere ideeen
-Als je verder nog wil spelen en oefenen met dit projectje zijn hier nog wat ideeen die je zou kunnen uitproberen:
+## 6 Verdere ideeën
+Als je verder nog wil spelen en oefenen met dit projectje zijn hier nog wat ideeën die je zou kunnen uitproberen:
 
 * Als datasource wordt nu memory gebruikt, oftewel na een server restart is alle data weg. Probeer dat te vervangen door een database als MongoDB of MySQL
-* Styling toevoegen voor de front-end, bijvoorbeeld door gebruik te maken van [Boostrap](https://getbootstrap.com/)
+* Styling toevoegen voor de front-end, bijvoorbeeld door gebruik te maken van [Bootstrap](https://getbootstrap.com/)
 * Voorkomen dat iemand meerdere keren hetzelfde artikel kan liken
 * De front-end uitbreiden met meerdere pagina's en routing
 * Tijd/datum en auteur toevoegen aan artikelen/reacties
