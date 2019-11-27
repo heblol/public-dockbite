@@ -27,6 +27,15 @@ module.exports = function (Article) {
     cb(null, 0)
   }
 
+  /**
+   * Here the `prototype.like` method is added to the model. This
+   * adds an API endpoint '/Articles/:id/like' and makes sure
+   * the corresponding method is called.
+   *
+   * It is a prototype method, which means that it works
+   * on an instance of the model, that's why an id must be specified.
+   * This also binds the `this` context to the current instance.
+   */
   Article.remoteMethod('prototype.like', {
     http: {
       verb: 'PATCH'
