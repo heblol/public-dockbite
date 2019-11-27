@@ -7,6 +7,11 @@ Het belangrijkst is om een beetje te wennen aan de gebruikte frameworks. Dit zal
 
 Secties 1-6 bevatten opdrachten om te wennen aan de omgeving die we bij Dockbite veel gebruiken. Bij 1 en 2 wordt je redelijk bij de hand genomen, daarna worden de opdrachten snel ingewikkelder en wordt je veel minder geholpen.
 
+## Vragen/opmerkingen
+Zoals al eerder vermeld is goed zoeken en documentatie lezen altijd de eerste stap. Als je daarmee ergens niet uit komt, of je hebt moeite met het opzetten van de development omgeving op je PC is het het makkelijkst even iemand aan te spreken op kantoor om je erbij te helpen.
+
+Als er inhoudelijk fouten zitten in het project of deze handleiding, dan kun je een issue of pull-request maken en zal ik er naar kijken.
+
 ## Inhoudsopgave
 
 **[Opzet](#opzet)**<br>
