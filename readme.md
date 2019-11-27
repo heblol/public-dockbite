@@ -23,6 +23,19 @@ Als er inhoudelijk fouten zitten in het project of deze handleiding, dan kun je 
 **[5 Voeg reacties toe](#5-voeg-reacties-toe)**<br>
 **[6 Verdere ideeen](#6-verdere-ideeen)**
 
+## Git
+Net als elk softwareproject, is ook dit project opgezet als een git repository. Heel kort uitgelegd is git een versiebeheersysteem wat ervoor zorgt dat meerdere mensen simultaan aan een project kunnen werken en oude versies behouden worden. Dit zorgt er enerzijds voor dat als je iets stuk hebt gemaakt, je gemakkelijk een versie terug kan naar waar het nog werkte om het probleem op te sporen. Anderzijds zorgt het ervoor dat als verschillende mensen hetzelfde bestand bewerken, er alleen conflicten optreden als de daadwerkelijk dezelfde regels hebben aangepast. Anders gaat het gewoon goed. De geschiedenis wordt ook met auteurs bewaard en dus kun je terugzien wie bepaalde stukken code geschreven heeft (met de toepasselijke benaming git blame).
+
+Het is aan te raden om je wat in te lezen in git, want je zult het nodig hebben. Het is ook voor eventuele eigen projecten die om code draaien erg aan te raden. De termen die je in ieder geval moet begrijpen zijn: commits, branches, pushen, pullen, pull-requests en conflicts.
+
+Wat linkjes: https://rogerdudler.github.io/git-guide/, https://hackernoon.com/understanding-git-fcffd87c15a3. Er zijn nog ontzettend veel tutorials te vinden op internet.
+
+Git werkt dus lokaal (op je eigen PC), maar ook op servers. Je kan je repository pushen naar een 'remote', in ons geval Github. Dit is handig, want dan kunnen er ook daadwerkelijk andere mensen bij en aan werken. In sommige gevallen echter, zoals in dit geval, heb je geen rechten om iemand anders repository aan te passen. Wat je wel kan doen en wat een mooie feature is, is de repository 'forken'. Helemaal bovenaan deze repository zie je een knopje `Fork`. Wat dit doet, is de hele repository kopieren naar je eigen Github account, zodat je zelf aan je eigen versie van het project kan werken. Dit beinvloed dus niet de originele versie. Dit is voornamelijk handig voor opensource projecten: andere mensen kunnen zelf functionaliteit aan een programma toevoegen in hun eigen fork, en vervolgens een 'pull-request' maken naar de originele versie. Als de auteur van de originele versie tevreden is met je toevoeging, kan deze je toevoeging accepteren en dan wordt het aan zijn eigen versie toegevoegd.
+
+Om gelijk een beetje te wennen aan git, is de vraag om dit project te forken naar je eigen account. Vanaf daar kun je dan je eigen fork 'clonen', zodat je lokaal op je PC alle bestanden van het project hebt. Gebruik hiervoor op Windows iets als git bash, of een programma als source tree. Op linux doe je dit eenvoudig vanuit je terminal met allerhande git commando's.
+
+Verderop in deze handleiding staan opdrachten, gemarkeerd met een nummer (#x.y). Als je een opdracht hebt afgerond, maak dan een commit met wat je gedaan hebt en zet dat nummer in de commit message.
+
 ## Opzet
 ### Back-end
 Het project bestaat uit twee helften: een back-end en een front-end. De back-end bevat modellen (in dit geval alleen het `Article` model) en logica die op die modellen kunnen worden toegepast. De back-end is een zogenaamde REST API (https://restfulapi.net/) en bevat API endpoints als `create`, `find`, `delete`, etc., voor de modellen.
