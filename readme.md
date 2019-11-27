@@ -14,6 +14,7 @@ Als er inhoudelijk fouten zitten in het project of deze handleiding, dan kun je 
 
 ## Inhoudsopgave
 
+**[Git](#git)**<br>
 **[Opzet](#opzet)**<br>
 **[Project Starten](#project-starten)**<br>
 **[1 Back-end Like](#1-back-end-like)**<br>
