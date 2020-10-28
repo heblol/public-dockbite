@@ -101,7 +101,7 @@ Alvorens je de front-end kan starten, moet je de benodigde packages installeren 
 
 ```
 $ npm install
-$ ng serve
+$ ng serve --open
 ```
 
 Na het compilen zal je als alles goed gaat uiteindelijk de regel `** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **` zien. Dit betekent dat je de front-end kan open in je browser op http://localhost:4200.
