@@ -1,0 +1,23 @@
+warning: LF will be replaced by CRLF in client/src/app/components/reply/reply.component.ts.
+The file will have its original line endings in your working directory
+[1mdiff --git a/client/src/app/components/reply/reply.component.ts b/client/src/app/components/reply/reply.component.ts[m
+[1mindex 8c3f270..d82c6af 100644[m
+[1m--- a/client/src/app/components/reply/reply.component.ts[m
+[1m+++ b/client/src/app/components/reply/reply.component.ts[m
+[36m@@ -26,11 +26,11 @@[m [mexport class ReplyComponent implements OnInit {[m
+   }[m
+ [m
+   public loadReplies(){[m
+[31m-    this.articleAPI.getHasReplies(this.article.id)[m
+[31m-      .subscribe(res => {[m
+[31m-        console.log("RESPONSE ", res)[m
+[31m-        this.replies = res;[m
+[31m-      })[m
+[32m+[m[32m    // this.articleAPI.getHasReplies(this.article.id)[m
+[32m+[m[32m    //   .subscribe(res => {[m
+[32m+[m[32m    //     console.log("RESPONSE ", res)[m
+[32m+[m[32m    //     this.replies = res;[m
+[32m+[m[32m    //   })[m
+   }[m
+ [m
+ [m

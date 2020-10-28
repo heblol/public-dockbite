@@ -1,0 +1,41 @@
+{
+  "name": "Reply",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "string",
+      "required": true
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    },
+    "createdBy": {
+      "type": "string",
+      "required": true
+    },
+    "articleId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "isReply": {
+      "type": "belongsTo",
+      "model": "Article",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
