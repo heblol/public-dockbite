@@ -26,11 +26,12 @@ export class ReplyComponent implements OnInit {
   }
 
   public loadReplies(){
-    this.articleAPI.getHasReplies(this.article.id)
-      .subscribe(res => {
-        console.log("RESPONSE ", res)
-        this.replies = res;
-      })
+    console.log('this has been pressed. ')
+    // this.articleAPI.getHasReplies(this.article.id)
+    //   .subscribe(res => {
+    //     console.log("RESPONSE ", res)
+    //     this.replies = res;
+    //   })
   }
 
 
@@ -58,6 +59,7 @@ export class ReplyComponent implements OnInit {
       data
     )
       .subscribe(res => {
+        console.error("There was an error: ")
         console.log(res)
       })
   }

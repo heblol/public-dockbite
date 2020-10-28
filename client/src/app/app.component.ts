@@ -84,10 +84,10 @@ export class AppComponent implements OnInit {
 
 
   public getReactions(id: number | string): void {
-    this.articleApi.getHasReplies(id)
-      .subscribe(res => {
-        console.log("RESPONSE: ", res)
-      })
+    // this.articleApi.getHasReplies(id)
+    //   .subscribe(res => {
+    //     console.log("RESPONSE: ", res)
+    //   })
   }
 
 

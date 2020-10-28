@@ -10,6 +10,11 @@
       "type": "string",
       "required": true
     },
+    "likes": {
+      "type": "number",
+      "required": false,
+      "default": 0
+    },
     "relations": {
       "isReply": {
         "type": "hasMany",
