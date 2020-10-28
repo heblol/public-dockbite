@@ -49,9 +49,12 @@ export class AddArticleComponent implements OnInit {
 
     this.articleApi.patchOrCreate(data)
       .subscribe(res => {
-        // alert(`Article ${title} has been added`);
-        this.resetInput()
+        alert(`Article ${title} has been added`);
+        this.resetInput();
+
+        // this does not update the site, therefor unfortunately i used window.location.reload();
         this.fetchArticles();
+        window.location.reload();
       });
 
   }
