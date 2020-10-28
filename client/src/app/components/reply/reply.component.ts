@@ -17,7 +17,8 @@ export class ReplyComponent implements OnInit {
   _title: string;
   _body: string;
 
-  constructor(private articleAPI: ArticleApi, private replyApi: ReplyApi) {
+
+  constructor(private articleAPI: ReplyApi, private replyApi: ReplyApi) {
   }
 
   ngOnInit() {
@@ -27,11 +28,17 @@ export class ReplyComponent implements OnInit {
 
   public loadReplies(){
     console.log('this has been pressed. ')
-    // this.articleAPI.getHasReplies(this.article.id)
-    //   .subscribe(res => {
-    //     console.log("RESPONSE ", res)
-    //     this.replies = res;
-    //   })
+
+    // This function does not work anymore.
+
+
+    // Temp changed articleAPI to ReplyAPI.
+    console.warn('changed articleAPI to ReplyAPI. Should be the Article API. ')
+    this.articleAPI.getHasReplies(this.article.id)
+      .subscribe(res => {
+        console.log("RESPONSE ", res)
+        this.replies = res;
+      })
   }
 
 
