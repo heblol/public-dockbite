@@ -15,5 +15,8 @@
   },
   "Article": {
     "dataSource": "db"
+  },
+  "Reply": {
+    "dataSource": "db"
   }
 }
