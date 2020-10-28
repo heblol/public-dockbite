@@ -16,11 +16,7 @@
   <i>{{article.likes}} Likes -
     <button (click)="like(article.id)">Like</button>
   </i>
-  <button (click)="getReactions(article.id)">Load reactions</button>
-  <div *ngFor="let reply of article.hasReplies">
-    {{reply.toString()}}
-  </div>
-  <app-reply></app-reply>
+  <app-reply [article]="article"></app-reply>
 </div>
 
 <app-add-article [fetchArticles]="fetchArticles"></app-add-article>

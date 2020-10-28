@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ReplyApi} from "../../sdk/services/custom/Reply";
 import {Reply} from "../../sdk/models/Reply";
+import {Article} from "../../sdk/models";
+import {ArticleApi} from "../../sdk/services/custom";
 
 @Component({
   selector: 'app-reply',
@@ -8,18 +10,29 @@ import {Reply} from "../../sdk/models/Reply";
   styleUrls: ['./reply.component.scss']
 })
 export class ReplyComponent implements OnInit {
-  @Input() reply: Reply;
+  @Input() article: Article;
   replies: Reply[];
+
 
   _title: string;
   _body: string;
-  _hasReplyId: number;
 
-  constructor(private replyApi: ReplyApi) {
+  constructor(private articleAPI: ArticleApi, private replyApi: ReplyApi) {
   }
 
   ngOnInit() {
+
+
   }
+
+  public loadReplies(){
+    this.articleAPI.getHasReplies(this.article.id)
+      .subscribe(res => {
+        console.log("RESPONSE ", res)
+        this.replies = res;
+      })
+  }
+
 
   set title(title: string) {
     this._title = title;
@@ -29,19 +42,16 @@ export class ReplyComponent implements OnInit {
     this._body = body;
   }
 
-  set hasReplyId(hasReplyId: number) {
-    this._hasReplyId = hasReplyId;
-  }
+  createReply(id) {
 
-
-  createReply(event) {
+    console.log("Adding a reply")
 
     const data = {
       "title": "GENERATED_TITLE",
-      "body": "GENERATED_BODY",
+      "body": `Belongs to article ${id}`,
       "createdAt": Date.now(),
       "createdBy": "Ivo Chen",
-      "hasReplyId": 0
+      "hasReplyId": 0,
     };
 
     this.replyApi.patchOrCreate(

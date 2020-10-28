@@ -1,4 +1,10 @@
 <div>
-  <h1>This will be the reply component.</h1>
-  <button (click)="createReply()">Auto generate an reply</button>
+  <h1>Generate a new reply component.</h1>
+  <!--  <div>{{reply.title}}</div>-->
+  <button (click)="createReply(article.id)">Auto generate an reply</button>
+  <button (click)="loadReplies()">Load replies</button>
+  <div *ngFor="let reply of replies">
+    <div>{{reply.title}}</div>
+    <div>{{reply.body}}</div>
+  </div>
 </div>
