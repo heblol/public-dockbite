@@ -9,6 +9,13 @@
     "body": {
       "type": "string",
       "required": true
+    },
+    "relations": {
+      "isReply": {
+        "type": "hasMany",
+        "model": "Reply",
+        "foreignKey": ""
+      }
     }
   }
 }
