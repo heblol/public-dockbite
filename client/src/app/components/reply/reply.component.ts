@@ -53,13 +53,13 @@ export class ReplyComponent implements OnInit {
       "createdAt": Date.now(),
       "createdBy": "Ivo Chen",
       "hasReplyId": 0,
+      articleId: id
     };
 
     this.replyApi.patchOrCreate(
       data
     )
       .subscribe(res => {
-        console.error("There was an error: ")
         console.log(res)
       })
   }
