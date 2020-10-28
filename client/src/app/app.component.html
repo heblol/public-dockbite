@@ -1,5 +1,5 @@
 <h1>Dockbite Case Blog system</h1>
-<h2>Blog articles</h2>
+<h2>Blog articles <span>({{getArticleLength()}})</span></h2>
 
 <!-- Show this div for each of the articles -->
 <div *ngFor="let article of articles">
@@ -13,8 +13,15 @@
         Also, the button should trigger the function `like` which
         is in `app.component.ts`. Find out how to bind a function
         to a button click in Angular -->
-  <i>... Likes - <button>Like</button></i>
+  <i>{{article.likes}} Likes -
+    <button (click)="like(article.id)">Like</button>
+  </i>
+  <button (click)="getReactions(article.id)">Load reactions</button>
+  <div *ngFor="let reply of article.hasReplies">
+    {{reply.toString()}}
+  </div>
+  <app-reply></app-reply>
 </div>
 
-
+<app-add-article [fetchArticles]="fetchArticles"></app-add-article>
 <!-- Can you create a form here to create a new article? -->

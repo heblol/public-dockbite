@@ -1,0 +1,19 @@
+<form>
+  <input
+    type="text"
+    name="title"
+    [(ngModel)]="_title"
+    placeholder="Title van het artikel"
+  />
+  {{_title}}
+
+  <input
+    type="text"
+    name="body"
+    [(ngModel)]="_body"
+    placeholder="Article body"
+  />
+
+
+  <button (click)="onSubmit($event)" >Voeg toe</button>
+</form>

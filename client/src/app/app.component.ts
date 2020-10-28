@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Article, ArticleApi } from './sdk';
+import {Component, OnInit} from '@angular/core';
+import {Article, ArticleApi} from './sdk';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +19,8 @@ export class AppComponent implements OnInit {
      * is here https://github.com/mean-expert-official/loopback-sdk-builder/wiki
      */
     private articleApi: ArticleApi
-  ) { }
+  ) {
+  }
 
   /**
    * OnInit is a function that Angular calls whenever the page is loaded. It is useful
@@ -38,20 +39,56 @@ export class AppComponent implements OnInit {
      */
     this.articleApi.find()
       .subscribe((articles: Article[]) => {
+
         this.articles = articles;
       });
   }
+
+  public fetchArticles() {
+
+    this.articleApi.find()
+      .subscribe((articles: Article[]) => {
+        this.articles = articles;
+      });
+  }
+
 
   /**
    * This function adds one like to the corresponding
    * article.
    * @param id Id of the article to like
    */
-  public like(id: number|string): void {
+  public like(id: number | string): void {
+
+
+    this.articleApi.like(id)
+      .subscribe(res => {
+        this.fetchArticles();
+      });
+
+
     /**
      * This function needs to be implemented. Make sure your remote method (on the back-end)
      * works. Also, remember that `this.articleApi` has all kinds of wrapper functions to
      * work with the back-end model.
      */
   }
+
+  getArticleLength() {
+
+    if (this.articles) {
+      return this.articles.length
+    }
+    return 0;
+  }
+
+
+  public getReactions(id: number | string): void {
+    this.articleApi.getHasReplies(id)
+      .subscribe(res => {
+        console.log("RESPONSE: ", res)
+      })
+  }
+
+
 }
